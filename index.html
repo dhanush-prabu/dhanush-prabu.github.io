@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhanush Prabu — Full-Stack Developer</title>
+  <meta name="description" content="Dhanush Prabu is a full-stack developer building multi-tenant CRM, ERP, HMS and billing platforms with React.js, Django REST Framework and PostgreSQL." />
+  <meta name="theme-color" content="#07070d" />
+  <meta name="author" content="Dhanush Prabu" />
+  <!-- When you move to a custom domain, replace https://dhanush-prabu.github.io/ here, in robots.txt and in sitemap.xml -->
+  <link rel="canonical" href="https://dhanush-prabu.github.io/" />
+
+  <!-- Link previews (LinkedIn, WhatsApp, Slack, X…) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dhanush Prabu" />
+  <meta property="og:url" content="https://dhanush-prabu.github.io/" />
+  <meta property="og:title" content="Dhanush Prabu — Full-Stack Developer" />
+  <meta property="og:description" content="React.js · Django REST Framework · PostgreSQL · Google Cloud. CRM, ERP, hospital and billing systems live with real clients." />
+  <meta property="og:image" content="https://dhanush-prabu.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dhanush Prabu — Full-Stack Developer · React.js · Django REST · PostgreSQL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dhanush Prabu — Full-Stack Developer" />
+  <meta name="twitter:description" content="React.js · Django REST Framework · PostgreSQL · Google Cloud. CRM, ERP, hospital and billing systems live with real clients." />
+  <meta name="twitter:image" content="https://dhanush-prabu.github.io/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dhanush Prabu",
+    "url": "https://dhanush-prabu.github.io/",
+    "jobTitle": "Full-Stack Developer",
+    "worksFor": { "@type": "Organization", "name": "Orbitz IT Solution" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "SRM Valliammai Engineering College" },
+    "email": "mailto:dhanushprabu23@gmail.com",
+    "sameAs": ["https://github.com/dhanush-prabu", "https://www.linkedin.com/in/dhanushprabu23"],
+    "knowsAbout": ["React.js", "Django REST Framework", "Python", "JavaScript", "PostgreSQL", "Google Cloud", "Multi-tenant architecture", "Role-based access control"]
+  }
+  </script>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon"href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23f472b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50' y='67' font-size='50' font-family='monospace' font-weight='700' text-anchor='middle' fill='white'%3EDP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <!-- ============ SVG icon sprite ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+      <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></symbol>
+      <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></symbol>
+      <!-- feature / project icons -->
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.4"/><path d="M17 14.2c2.4.3 4 2.1 4 4.8"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 15l-3-3a22 22 0 0 1 2-4 12 12 0 0 1 11-5c0 3-1 8-5 11a22 22 0 0 1-4 2zM9 12H4s.5-3 2-4c1.5-.5 5 0 5 0M12 15v5s3-.5 4-2c.5-1.5 0-5 0-5M5 16c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8zM3 8l9 5 9-5M12 13v8"/></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M20.8 5.6a5.2 5.2 0 0 0-7.4 0L12 7l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 21l8.8-8a5.2 5.2 0 0 0 0-7.4z"/><path d="M6.5 12h3l1.5-3 2.5 6 1.5-3h2.5"/></symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3zM9 8h6M9 12h6"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></symbol>
+      <symbol id="i-swap" viewBox="0 0 24 24"><path d="m17 3 4 4-4 4M21 7H8a4 4 0 0 0-4 4M7 21l-4-4 4-4M3 17h13a4 4 0 0 0 4-4"/></symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10.5 10.5 0 0 1 14 0M8.5 16a5.5 5.5 0 0 1 7 0M12 19.5h.01"/></symbol>
+      <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9h9z"/><path d="M15.5 3.6A9 9 0 0 1 20.4 8.5H15.5V3.6z"/></symbol>
+      <symbol id="i-repo" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17zM4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3z"/></symbol>
+      <symbol id="i-fork" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 11v6"/></symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9zM6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="#home" class="logo" aria-label="Dhanush Prabu — home">
+        <span class="logo-mark"><span>DP</span></span>
+        <span class="logo-text">Dhanush<b>.</b></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+        <a href="#about" style="--i:1"><span>About</span></a>
+        <a href="#skills" style="--i:2"><span>Skills</span></a>
+        <a href="#experience" style="--i:3"><span>Experience</span></a>
+        <a href="#projects" style="--i:4"><span>Projects</span></a>
+        <a href="#github" style="--i:5"><span>GitHub</span></a>
+        <a href="#education" style="--i:6"><span>Education</span></a>
+        <a href="#contact" class="menu-only" style="--i:7"><span>Contact</span></a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light / dark theme" title="Toggle theme">
+          <svg class="ico icon-sun"><use href="#i-sun"/></svg>
+          <svg class="ico icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta magnetic"><span>Let's talk</span></a>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bars"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="now-pill hero-in" style="--d:.1s"><span class="pulse"></span> Software Developer at <b>Orbitz IT Solution</b></p>
+
+          <p class="kicker hero-in" style="--d:.2s"><span class="kicker-line"></span> Full-Stack Developer</p>
+
+          <h1 class="name" id="heroName" aria-label="Dhanush Prabu">
+            <span class="name-line">Dhanush</span>
+            <span class="name-line">Prabu<span class="name-dot">.</span></span>
+          </h1>
+
+          <p class="build-line hero-in" style="--d:.9s">
+            <span>I build</span>
+            <span class="rotator" aria-label="multi-tenant SaaS platforms, CRM and ERP systems, hospital software, billing platforms, React and Django apps">
+              <span style="--k:0">multi-tenant SaaS.</span>
+              <span style="--k:1">CRM &amp; ERP systems.</span>
+              <span style="--k:2">hospital software.</span>
+              <span style="--k:3">billing platforms.</span>
+              <span style="--k:4">React + Django apps.</span>
+            </span>
+          </p>
+
+          <p class="lead hero-in" style="--d:1.05s">
+            1+ years shipping production-grade software with <strong>React.js</strong>,
+            <strong>Django REST Framework</strong> and <strong>PostgreSQL</strong> — CRM, ERP, hospital and billing systems that are live with real clients today.
+          </p>
+
+          <div class="hero-cta hero-in" style="--d:1.2s">
+            <a href="#projects" class="btn btn-primary magnetic">
+              <span>View my work</span>
+              <svg class="ico"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="Dhanush_Prabu_Resume_23.pdf" class="btn btn-ghost magnetic" download>
+              <svg class="ico"><use href="#i-down"/></svg>
+              <span>Résumé</span>
+            </a>
+            <ul class="socials" aria-label="Social links">
+              <li><a class="magnetic" href="https://github.com/dhanush-prabu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="ico"><use href="#i-gh"/></svg></a></li>
+              <li><a class="magnetic" href="https://linkedin.com/in/dhanushprabu23" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="ico"><use href="#i-in"/></svg></a></li>
+              <li><a class="magnetic" href="mailto:dhanushprabu23@gmail.com" aria-label="Email" title="Email"><svg class="ico"><use href="#i-mail"/></svg></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Orbiting tech stack -->
+        <div class="hero-visual hero-in" style="--d:.6s" aria-hidden="true">
+          <div class="orbit">
+            <span class="ring ring-1"></span>
+            <span class="ring ring-2"></span>
+            <span class="ring ring-3"></span>
+
+            <div class="orbit-core">
+              <span class="core-pulse"></span>
+              <span class="core-text">DP</span>
+            </div>
+
+            <div class="orbiter o-inner">
+              <span class="sat" style="--a:0deg"><em>React</em></span>
+              <span class="sat" style="--a:120deg"><em>Django</em></span>
+              <span class="sat" style="--a:240deg"><em>Postgres</em></span>
+            </div>
+            <div class="orbiter o-outer">
+              <span class="sat" style="--a:40deg"><em>Python</em></span>
+              <span class="sat" style="--a:130deg"><em>GCP</em></span>
+              <span class="sat" style="--a:220deg"><em>JWT</em></span>
+              <span class="sat" style="--a:310deg"><em>REST</em></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll down">
+        <span class="mouse"><span></span></span>
+      </a>
+    </section>
+
+    <!-- ============ TECH MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <ul>
+          <li>React.js</li><li>Django REST</li><li>PostgreSQL</li><li>Python</li><li>JavaScript</li><li>Google Cloud</li><li>Tailwind CSS</li><li>Node.js</li><li>WebSockets</li><li>JWT</li><li>Docker</li><li>Kotlin</li><li>MongoDB</li><li>Git</li>
+        </ul>
+        <ul>
+          <li>React.js</li><li>Django REST</li><li>PostgreSQL</li><li>Python</li><li>JavaScript</li><li>Google Cloud</li><li>Tailwind CSS</li><li>Node.js</li><li>WebSockets</li><li>JWT</li><li>Docker</li><li>Kotlin</li><li>MongoDB</li><li>Git</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="At a glance">
+      <div class="container stats-grid">
+        <div class="stat reveal"><span class="num"><span data-count="1" data-suffix="+">0</span></span><span class="lbl">Years of production experience</span></div>
+        <div class="stat reveal"><span class="num"><span data-count="4">0</span></span><span class="lbl">Product platforms shipped</span></div>
+        <div class="stat reveal"><span class="num"><span data-count="6" data-suffix="+">0</span></span><span class="lbl">Client websites delivered</span></div>
+        <div class="stat reveal"><span class="num"><span data-count="5">0</span></span><span class="lbl">Developers led</span></div>
+        <div class="stat reveal"><span class="num"><span data-count="100" data-suffix="%">0</span></span><span class="lbl">Parity on legacy migration</span></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">01 / About</span>
+          <h2>Engineer first,<br /><span class="grad">problem-solver</span> always.</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a full-stack developer who works across the entire SDLC — from gathering requirements in
+              client meetings, through API and database design, to testing and <strong>deployment on Google Cloud</strong>.
+            </p>
+            <p>
+              At <strong>Orbitz IT Solution</strong> I'm a core developer on the product suite — a multi-tenant SaaS CRM,
+              an ERP, a hospital management system and a billing platform — all live and used daily by real clients.
+              I also build and deploy client websites for the company, and I currently
+              <strong>lead a team of 5 developers</strong> across two projects.
+            </p>
+            <p>
+              Earlier I wrote technical content on DSA, Python and Java for PrepBytes, which is why I care about
+              clean code, strong fundamentals and explaining complex things simply.
+            </p>
+          </div>
+
+          <div class="about-cards">
+            <article class="feature reveal spot">
+              <div class="f-ico"><svg class="ico"><use href="#i-layers"/></svg></div>
+              <h3>Multi-tenant architecture</h3>
+              <p>Tenant-level data isolation and role-based access control designed in from day one.</p>
+            </article>
+            <article class="feature reveal spot">
+              <div class="f-ico"><svg class="ico"><use href="#i-chat"/></svg></div>
+              <h3>Client-facing delivery</h3>
+              <p>Requirements gathered in client meetings and turned into production-ready features.</p>
+            </article>
+            <article class="feature reveal spot">
+              <div class="f-ico"><svg class="ico"><use href="#i-users"/></svg></div>
+              <h3>Team leadership</h3>
+              <p>Task delegation, code reviews and Git branch management across every repository.</p>
+            </article>
+            <article class="feature reveal spot">
+              <div class="f-ico"><svg class="ico"><use href="#i-rocket"/></svg></div>
+              <h3>End-to-end ownership</h3>
+              <p>Design, build, test and deploy on Google Cloud — then keep it running for real users.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">02 / Skills</span>
+          <h2>The toolkit I <span class="grad">ship</span> with.</h2>
+        </header>
+
+        <p class="skill-hint reveal"><span class="hint-hover">Hover</span><span class="hint-tap">Tap</span> a card to see every skill in it.</p>
+
+        <div class="skill-grid" id="skillGrid">
+          <article class="skill-tile reveal" tabindex="0" style="--hue:262" aria-label="Front-End: 9 skills">
+            <div class="st-face">
+              <div class="st-top"><span class="g-ico">&lt;/&gt;</span><span class="st-count">9 skills</span></div>
+              <h3>Front-End</h3>
+              <ul class="st-preview"><li>React.js</li><li>Tailwind CSS</li><li class="more">+7</li></ul>
+              <span class="st-glyph" aria-hidden="true">&lt;/&gt;</span>
+            </div>
+            <div class="st-detail">
+              <h4>Front-End</h4>
+              <ul class="chips">
+                <li>React.js</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li><li>Responsive Web Design</li>
+                <li>Redux / Context API</li><li>Vite</li><li>REST API Integration</li><li>UI Components</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="skill-tile reveal" tabindex="0" style="--hue:190" aria-label="Back-End: 11 skills">
+            <div class="st-face">
+              <div class="st-top"><span class="g-ico">API</span><span class="st-count">11 skills</span></div>
+              <h3>Back-End</h3>
+              <ul class="st-preview"><li>Django REST</li><li>Node.js</li><li class="more">+9</li></ul>
+              <span class="st-glyph" aria-hidden="true">API</span>
+            </div>
+            <div class="st-detail">
+              <h4>Back-End</h4>
+              <ul class="chips">
+                <li>Python</li><li>Django</li><li>Django REST Framework</li><li>Node.js</li><li>Express.js</li>
+                <li>RESTful APIs</li><li>WebSockets (Channels)</li><li>JWT Auth</li><li>RBAC</li>
+                <li>Multi-Tenant Architecture</li><li>Microservices Concepts</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="skill-tile reveal" tabindex="0" style="--hue:330" aria-label="Databases: 7 skills">
+            <div class="st-face">
+              <div class="st-top"><span class="g-ico">DB</span><span class="st-count">7 skills</span></div>
+              <h3>Databases</h3>
+              <ul class="st-preview"><li>PostgreSQL</li><li>MongoDB</li><li class="more">+5</li></ul>
+              <span class="st-glyph" aria-hidden="true">DB</span>
+            </div>
+            <div class="st-detail">
+              <h4>Databases</h4>
+              <ul class="chips">
+                <li>PostgreSQL</li><li>MongoDB</li><li>SQLite</li><li class="soft">MySQL <em>(basic)</em></li>
+                <li>Database Design</li><li>Django ORM</li><li>Query Optimization</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="skill-tile reveal" tabindex="0" style="--hue:30" aria-label="Cloud and DevOps: 7 skills">
+            <div class="st-face">
+              <div class="st-top"><span class="g-ico">GCP</span><span class="st-count">7 skills</span></div>
+              <h3>Cloud &amp; DevOps</h3>
+              <ul class="st-preview"><li>Google Cloud</li><li>Git</li><li class="more">+5</li></ul>
+              <span class="st-glyph" aria-hidden="true">GCP</span>
+            </div>
+            <div class="st-detail">
+              <h4>Cloud &amp; DevOps</h4>
+              <ul class="chips">
+                <li>Google Cloud Platform</li><li>Git</li><li>GitHub</li><li>Linux</li><li>Release Management</li>
+                <li class="soft">Docker <em>(basic)</em></li><li class="soft">GitHub Actions <em>(basic)</em></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="skill-tile reveal" tabindex="0" style="--hue:150" aria-label="Languages: 5 skills">
+            <div class="st-face">
+              <div class="st-top"><span class="g-ico">{ }</span><span class="st-count">5 languages</span></div>
+              <h3>Languages</h3>
+              <ul class="st-preview"><li>JavaScript</li><li>Python</li><li class="more">+3</li></ul>
+              <span class="st-glyph" aria-hidden="true">{ }</span>
+            </div>
+            <div class="st-detail">
+              <h4>Languages</h4>
+              <ul class="chips">
+                <li>JavaScript</li><li>Python</li><li>Java</li><li>Kotlin</li><li class="soft">TypeScript <em>(learning)</em></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="skill-tile reveal" tabindex="0" style="--hue:220" aria-label="Practices and Core CS: 12 skills">
+            <div class="st-face">
+              <div class="st-top"><span class="g-ico">CS</span><span class="st-count">12 skills</span></div>
+              <h3>Practices &amp; Core CS</h3>
+              <ul class="st-preview"><li>DSA</li><li>Code Reviews</li><li class="more">+10</li></ul>
+              <span class="st-glyph" aria-hidden="true">CS</span>
+            </div>
+            <div class="st-detail">
+              <h4>Practices &amp; Core CS</h4>
+              <ul class="chips">
+                <li>Unit Testing</li><li>API Testing (Postman)</li><li>Code Reviews</li><li>Client Communication</li>
+                <li>Team Leadership</li><li>Agile / Scrum</li><li>SDLC</li><li>DSA</li><li>OOP</li>
+                <li>System Design</li><li>API Design</li><li>AuthN &amp; AuthZ</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">03 / Experience</span>
+          <h2>Where I've <span class="grad">made an impact</span>.</h2>
+        </header>
+
+        <div class="timeline" id="timeline">
+          <span class="t-line" aria-hidden="true"><span class="t-fill" id="tFill"></span></span>
+
+          <article class="t-item reveal">
+            <span class="t-dot current" aria-hidden="true"></span>
+            <div class="t-card spot">
+              <div class="t-head">
+                <div>
+                  <h3>Software Developer (Full-Stack)</h3>
+                  <p class="company">Orbitz IT Solution</p>
+                </div>
+                <span class="date now">Jan 2026 – Present</span>
+              </div>
+
+              <div class="product-row" aria-label="Products worked on">
+                <span class="product">OrbCRM</span><span class="product">OrbERP</span>
+                <span class="product">OrbHMS</span><span class="product">Orbill</span>
+              </div>
+
+              <ul class="bullets">
+                <li>Core full-stack developer across the Orbitz product suite — <b>OrbCRM, OrbERP, OrbHMS</b> (Hospital Management System) and <b>Orbill</b> (Billing) — with major features live and in active use by multiple clients.</li>
+                <li>Designed and built core modules of <b>OrbCRM</b>, a multi-tenant SaaS CRM written from scratch in React.js and Django REST Framework, with <b>RBAC</b>, <b>tenant-level data isolation</b> and real-time business workflows.</li>
+                <li>Delivered <b>OrbERP</b> modules for inventory, reporting and operational workflows, and contributed to <b>OrbHMS</b> covering patient records, billing and reporting for healthcare clients — turning requirements gathered in client meetings into production features.</li>
+                <li>Developed <b>Orbill</b>, a client-facing billing app: designed billing screens and reporting modules and implemented business-defined billing rules through RESTful APIs, improving accuracy and cutting manual work for client staff.</li>
+                <li>Built and deployed <b>6+ full-stack websites and platforms</b> for Orbitz's clients — marketing sites, e-commerce and classifieds — using React.js and DRF, live and serving real traffic.</li>
+                <li>Contributed to migrating a <b>legacy .NET billing system</b> to React + Django REST with <b>100% functional parity</b>, improving usability and maintainability while shipping production releases with QA and product teams.</li>
+                <li>Currently <b>lead a team of 5 developers</b> across 2 concurrent projects: delegating tasks, running code reviews, ensuring on-time delivery and managing Git/GitHub branches across all repositories.</li>
+              </ul>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>PostgreSQL</li><li>Google Cloud</li><li>RBAC</li><li>Multi-tenant</li><li>Team Lead</li></ul>
+            </div>
+          </article>
+
+          <article class="t-item reveal">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card spot">
+              <div class="t-head">
+                <div>
+                  <h3>Freelance Technical Content Developer</h3>
+                  <p class="company">PrepBytes · Remote</p>
+                </div>
+                <span class="date">Feb 2025 – Jan 2026</span>
+              </div>
+              <ul class="bullets">
+                <li>Authored technical articles on <b>DSA, Python, Java</b> and back-end fundamentals; wrote and tested every code example hands-on to guarantee correctness for placement and competitive-programming learners.</li>
+                <li>Worked with the editorial team to turn complex computer-science concepts into clear, beginner-friendly explanations across multiple difficulty levels — meeting every delivery deadline.</li>
+              </ul>
+              <ul class="tags"><li>DSA</li><li>Python</li><li>Java</li><li>Technical Writing</li></ul>
+            </div>
+          </article>
+
+          <article class="t-item reveal">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card spot">
+              <div class="t-head">
+                <div>
+                  <h3>Full-Stack Developer Intern</h3>
+                  <p class="company">Zidio Development · Remote</p>
+                </div>
+                <span class="date">Apr 2024 – Jul 2024</span>
+              </div>
+              <ul class="bullets">
+                <li>Built and enhanced web-app features with <b>React.js and REST APIs</b> in an Agile team; integrated front-end/back-end data flow.</li>
+                <li>Took part in sprint planning and code reviews, and performed manual and edge-case testing before each release.</li>
+              </ul>
+              <ul class="tags"><li>React.js</li><li>REST APIs</li><li>Agile</li><li>Testing</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section alt" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">04 / Projects</span>
+          <h2>Things I've <span class="grad">built</span>.</h2>
+        </header>
+
+        <div class="tabs reveal" role="tablist" aria-label="Project categories" id="projectTabs">
+          <button class="tab active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="work">Orbitz work</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="personal">Personal</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+
+          <article class="project reveal spot tilt-card" data-case="orbcrm" data-cat="work" style="--hue:262">
+            <div class="p-art"><svg class="ico"><use href="#i-users"/></svg><span class="p-num">01</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge live"><i></i> Live in production</span><span class="p-kind">Orbitz IT Solution</span></div>
+              <h3>OrbCRM</h3>
+              <p class="p-sub">Multi-tenant SaaS CRM</p>
+              <p>Built from scratch with React.js and Django REST Framework. Every client gets an isolated tenant, with fine-grained role-based access control and real-time workflows that keep teams in sync.</p>
+              <ul class="p-points">
+                <li>Tenant-level data isolation</li>
+                <li>Role-based access control (RBAC)</li>
+                <li>Real-time workflows via WebSockets</li>
+              </ul>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>PostgreSQL</li><li>Channels</li><li>JWT</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the OrbCRM case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spot tilt-card" data-case="orberp" data-cat="work" style="--hue:190">
+            <div class="p-art"><svg class="ico"><use href="#i-box"/></svg><span class="p-num">02</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge live"><i></i> Live in production</span><span class="p-kind">Orbitz IT Solution</span></div>
+              <h3>OrbERP</h3>
+              <p class="p-sub">Enterprise resource planning</p>
+              <p>Delivered modules for inventory management, reporting and day-to-day operational workflows used by multiple client organisations.</p>
+              <ul class="p-points">
+                <li>Inventory management</li>
+                <li>Operational reports &amp; dashboards</li>
+                <li>Workflow automation for business teams</li>
+              </ul>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>PostgreSQL</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the OrbERP case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spot tilt-card" data-case="orbhms" data-cat="work" style="--hue:340">
+            <div class="p-art"><svg class="ico"><use href="#i-pulse"/></svg><span class="p-num">03</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge live"><i></i> Live in production</span><span class="p-kind">Orbitz IT Solution</span></div>
+              <h3>OrbHMS</h3>
+              <p class="p-sub">Hospital management system</p>
+              <p>Contributed to patient records, billing and reporting workflows for healthcare clients — requirements gathered in client meetings and shipped as production features.</p>
+              <ul class="p-points">
+                <li>Patient records management</li>
+                <li>Billing &amp; reporting workflows</li>
+              </ul>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>PostgreSQL</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the OrbHMS case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spot tilt-card" data-case="orbill" data-cat="work" style="--hue:38">
+            <div class="p-art"><svg class="ico"><use href="#i-receipt"/></svg><span class="p-num">04</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge live"><i></i> Live in production</span><span class="p-kind">Orbitz IT Solution</span></div>
+              <h3>Orbill</h3>
+              <p class="p-sub">Client-facing billing application</p>
+              <p>Designed the billing screens and reporting modules, and implemented business-defined billing rules via RESTful APIs — improving billing accuracy and reducing manual work for client staff.</p>
+              <ul class="p-points">
+                <li>Rule-driven billing over REST APIs</li>
+                <li>Reporting modules</li>
+              </ul>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>PostgreSQL</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the Orbill case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project wide reveal spot tilt-card" data-case="sites" data-cat="work" style="--hue:160">
+            <div class="p-art"><svg class="ico"><use href="#i-globe"/></svg><span class="p-num">05</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge live"><i></i> Live &amp; serving traffic</span><span class="p-kind">Orbitz IT Solution</span></div>
+              <h3>6+ Client Websites &amp; Platforms</h3>
+              <p class="p-sub">Marketing sites · E-commerce · Classifieds</p>
+              <p>Designed, built and deployed full-stack websites for Orbitz's clients using React.js and Django REST Framework — taken from requirements all the way to live production.</p>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>Google Cloud</li><li>Responsive design</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the client websites case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project wide reveal spot tilt-card" data-case="migration" data-cat="work" style="--hue:215">
+            <div class="p-art"><svg class="ico"><use href="#i-swap"/></svg><span class="p-num">06</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge done"><i></i> Shipped</span><span class="p-kind">Orbitz IT Solution</span></div>
+              <h3>Legacy .NET Billing → React + Django</h3>
+              <p class="p-sub">100% functional parity</p>
+              <p>Contributed to migrating a legacy .NET billing system to a modern React + Django REST stack. Every existing behaviour was preserved while usability and maintainability improved, with releases shipped alongside QA and product teams.</p>
+              <ul class="tags"><li>React.js</li><li>Django REST</li><li>Migration</li><li>QA collaboration</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the legacy billing migration case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spot tilt-card" data-case="datalens" data-cat="personal" style="--hue:300">
+            <div class="p-art"><svg class="ico"><use href="#i-wifi"/></svg><span class="p-num">07</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge info"><i></i> Android app</span><span class="p-kind">Personal project</span></div>
+              <h3>DataLens</h3>
+              <p class="p-sub">Android WiFi data usage tracker</p>
+              <p>A native Android app that tracks per-app WiFi usage with <code>NetworkStatsManager</code>, with timeframe filtering, real-time search and a live-updating home-screen widget.</p>
+              <ul class="p-points">
+                <li>Day-by-day bar charts &amp; calendar-month navigation</li>
+                <li>Custom day-bucketing algorithm</li>
+                <li>Widget refreshed via AlarmManager + coroutines</li>
+              </ul>
+              <ul class="tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Navigation3</li><li>Coroutines</li><li>AlarmManager</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the DataLens case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+                <a class="p-link" href="https://github.com/dhanush-prabu/android-wifi-data-tracker" target="_blank" rel="noopener">Source code <svg class="ico"><use href="#i-gh"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal spot tilt-card" data-case="spendwise" data-cat="personal" style="--hue:25">
+            <div class="p-art"><svg class="ico"><use href="#i-pie"/></svg><span class="p-num">08</span></div>
+            <div class="p-body">
+              <div class="p-top"><span class="p-badge info"><i></i> Full-stack</span><span class="p-kind">Personal project</span></div>
+              <h3>SpendWise</h3>
+              <p class="p-sub">Personal finance &amp; expense tracker</p>
+              <p>A multi-user expense platform with strict per-user data isolation, category-wise analytics dashboards and a Django REST back-end with structured validation and consistent API error handling.</p>
+              <ul class="p-points">
+                <li>Per-user data isolation</li>
+                <li>Chart.js analytics dashboards</li>
+                <li>Validated, consistent API errors</li>
+              </ul>
+              <ul class="tags"><li>React</li><li>Django REST</li><li>PostgreSQL</li><li>JWT</li><li>Chart.js</li></ul>
+              <div class="p-actions">
+                <button class="p-case" type="button" aria-haspopup="dialog" aria-label="Open the SpendWise case study">Case study <svg class="ico"><use href="#i-arrow"/></svg></button>
+                <a class="p-link" href="https://github.com/dhanush-prabu" target="_blank" rel="noopener">GitHub <svg class="ico"><use href="#i-gh"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GITHUB ============ -->
+    <section class="section" id="github">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">05 / GitHub</span>
+          <h2>Fresh from my <span class="grad">GitHub</span>.</h2>
+        </header>
+
+        <div class="gh-layout">
+          <aside class="gh-profile reveal spot" id="ghProfile" aria-live="polite">
+            <div class="gh-head">
+              <span class="gh-avatar skel" id="ghAvatar"></span>
+              <div>
+                <p class="gh-name" id="ghName">Dhanush Prabu</p>
+                <a class="gh-login" href="https://github.com/dhanush-prabu" target="_blank" rel="noopener">@dhanush-prabu</a>
+              </div>
+            </div>
+            <dl class="gh-stats">
+              <div><dt>Repos</dt><dd id="ghRepoCount">–</dd></div>
+              <div><dt>Followers</dt><dd id="ghFollowers">–</dd></div>
+              <div><dt>Since</dt><dd id="ghSince">–</dd></div>
+            </dl>
+            <p class="gh-sub">Languages across my repositories</p>
+            <div class="lang-bar" id="langBar" aria-hidden="true"><span class="skel-bar"></span></div>
+            <ul class="lang-legend" id="langLegend"></ul>
+            <a class="btn btn-ghost btn-block magnetic" href="https://github.com/dhanush-prabu" target="_blank" rel="noopener">
+              <svg class="ico"><use href="#i-gh"/></svg><span>View full profile</span>
+            </a>
+          </aside>
+
+          <div class="gh-repos" id="ghRepos" aria-live="polite">
+            <div class="repo skel-card"></div><div class="repo skel-card"></div><div class="repo skel-card"></div>
+            <div class="repo skel-card"></div><div class="repo skel-card"></div><div class="repo skel-card"></div>
+          </div>
+        </div>
+        <p class="gh-status" id="ghStatus" role="status"></p>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section alt" id="education">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">06 / Education</span>
+          <h2>Where it <span class="grad">started</span>.</h2>
+        </header>
+
+        <article class="edu-card reveal spot">
+          <div class="edu-ico"><svg class="ico"><use href="#i-cap"/></svg></div>
+          <div class="edu-body">
+            <h3>B.Tech in Information Technology</h3>
+            <p class="company">SRM Valliammai Engineering College</p>
+            <div class="edu-meta">
+              <span class="pill">Graduated 2023</span>
+              <span class="pill">CGPA 8.2 / 10</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">07 / Contact</span>
+          <h2>Let's build <span class="grad">something great</span> together.</h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="mail-box">
+              <small>Email me at</small>
+              <div class="mail-row">
+                <a href="mailto:dhanushprabu23@gmail.com" id="mailLink">dhanushprabu23@gmail.com</a>
+                <button type="button" class="copy-btn" id="copyMail" aria-label="Copy email address" title="Copy email">
+                  <svg class="ico ico-copy"><use href="#i-copy"/></svg>
+                  <svg class="ico ico-check"><use href="#i-check"/></svg>
+                </button>
+              </div>
+            </div>
+            <ul class="c-list">
+              <li><a class="c-item" href="tel:+918098634907"><span class="c-ico"><svg class="ico"><use href="#i-phone"/></svg></span><span><small>Phone</small><b>+91-8098634907</b></span></a></li>
+              <li><a class="c-item" href="https://linkedin.com/in/dhanushprabu23" target="_blank" rel="noopener"><span class="c-ico"><svg class="ico"><use href="#i-in"/></svg></span><span><small>LinkedIn</small><b>linkedin.com/in/dhanushprabu23</b></span></a></li>
+              <li><a class="c-item" href="https://github.com/dhanush-prabu" target="_blank" rel="noopener"><span class="c-ico"><svg class="ico"><use href="#i-gh"/></svg></span><span><small>GitHub</small><b>github.com/dhanush-prabu</b></span></a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cName">Your name</label>
+              <input id="cName" name="name" type="text" autocomplete="name" required placeholder="Jane Doe" />
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="cEmail">Your email</label>
+              <input id="cEmail" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" name="message" rows="5" required placeholder="Tell me about your project or role…"></textarea>
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block magnetic">
+              <span>Send message</span>
+              <svg class="ico"><use href="#i-send"/></svg>
+            </button>
+            <p class="form-note" id="formNote" role="status">Opens your email app with the message pre-filled.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- ============ CASE STUDY DIALOG (filled by script.js) ============ -->
+  <dialog class="case" id="caseDialog" aria-labelledby="caseTitle">
+    <div class="case-inner" id="caseInner"></div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Dhanush Prabu</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/dhanush-prabu" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/dhanushprabu23" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="Dhanush_Prabu_Resume_23.pdf" download>Résumé</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg class="ico"><use href="#i-up"/></svg></button>
+
+  <script src="script.js"></script>
+</body>
+</html>

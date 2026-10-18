@@ -1,0 +1,7 @@
+# local editor / preview settings
+.claude/
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
