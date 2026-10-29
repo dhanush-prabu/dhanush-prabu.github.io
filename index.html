@@ -674,6 +674,27 @@
             <div class="repo skel-card"></div><div class="repo skel-card"></div><div class="repo skel-card"></div>
           </div>
         </div>
+        <div class="gh-heat reveal spot" id="ghHeat" hidden>
+          <div class="heat-head">
+            <div>
+              <h3 class="heat-title"><span id="heatTotal">–</span> contributions in the last year</h3>
+              <p class="heat-sub">Commits, pull requests and issues across GitHub</p>
+            </div>
+            <dl class="heat-stats">
+              <div><dt>Current streak</dt><dd id="heatCur">–</dd></div>
+              <div><dt>Longest streak</dt><dd id="heatLong">–</dd></div>
+            </dl>
+          </div>
+          <div class="heat-scroll" id="heatScroll">
+            <div class="heat-months" id="heatMonths" aria-hidden="true"></div>
+            <div class="heat-grid" id="heatGrid" role="img" aria-label="GitHub contribution heatmap for the last year"></div>
+          </div>
+          <div class="heat-foot">
+            <a href="https://github.com/dhanush-prabu" target="_blank" rel="noopener">View on GitHub</a>
+            <span class="heat-legend" aria-hidden="true">Less <i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i> More</span>
+          </div>
+          <div class="heat-tip" id="heatTip" role="tooltip" hidden></div>
+        </div>
         <p class="gh-status" id="ghStatus" role="status"></p>
       </div>
     </section>
@@ -727,6 +748,7 @@
             </ul>
           </div>
 
+          <!-- Contact form hidden for now: remove this comment's open/close markers to bring it back
           <form class="contact-form reveal" id="contactForm" novalidate>
             <div class="field">
               <label for="cName">Your name</label>
@@ -749,6 +771,7 @@
             </button>
             <p class="form-note" id="formNote" role="status">Opens your email app with the message pre-filled.</p>
           </form>
+          -->
         </div>
       </div>
     </section>

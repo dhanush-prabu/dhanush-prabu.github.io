@@ -643,7 +643,7 @@
   var GH_USER = 'dhanush-prabu';
   var GH_CACHE = 'gh-cache-v1';
   var GH_TTL = 60 * 60 * 1000; // an hour keeps us well inside GitHub's 60 requests/hour limit
-  var GH_HIDE = /test\d*$|^mergeconflict$/i; // practice repos that aren't worth showing
+  var GH_HIDE = /test\d*$|^mergeconflict$|\.github\.io$/i; // practice repos and this portfolio's own repo aren't worth showing
   var LANG_COLORS = {
     JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5', Kotlin: '#A97BFF', Java: '#b07219',
     CSS: '#663399', HTML: '#e34c26', Dart: '#00B4AB', Shell: '#89e051', 'Jupyter Notebook': '#DA5B0B'
@@ -748,15 +748,95 @@
     }).catch(function () { ghFail(cached); });
   }
 
+  /* ---------- Contribution heatmap ---------- */
+  var HEAT_CACHE = 'gh-heat-v1';
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  function fmtDay(iso) {
+    var p = iso.split('-');
+    return MONTHS[+p[1] - 1] + ' ' + +p[2] + ', ' + p[0];
+  }
+
+  function renderHeat(days) {
+    var box = $('#ghHeat');
+    var grid = $('#heatGrid');
+    if (!box || !days.length) return;
+
+    // stats
+    var total = 0, run = 0, longest = 0;
+    days.forEach(function (d) {
+      total += d.count;
+      if (d.count) { run++; if (run > longest) longest = run; } else run = 0;
+    });
+    var cur = 0, i = days.length - 1;
+    if (!days[i].count) i--; // today may simply not have happened yet
+    for (; i >= 0 && days[i].count; i--) cur++;
+    $('#heatTotal').textContent = total;
+    $('#heatCur').textContent = cur + (cur === 1 ? ' day' : ' days');
+    $('#heatLong').textContent = longest + (longest === 1 ? ' day' : ' days');
+
+    // cells, Sunday-first columns
+    var offset = new Date(days[0].date + 'T00:00:00Z').getUTCDay();
+    var html = '';
+    for (var p = 0; p < offset; p++) html += '<i class="pad"></i>';
+    var months = '', lastMonth = -1, lastWk = -9;
+    days.forEach(function (d, n) {
+      var wk = Math.floor((n + offset) / 7);
+      var m = +d.date.slice(5, 7) - 1;
+      if (m !== lastMonth) {
+        if (wk - lastWk >= 3) { months += '<span style="left:' + wk * 16 + 'px">' + MONTHS[m] + '</span>'; lastWk = wk; }
+        lastMonth = m;
+      }
+      html += '<i class="l' + d.level + '" style="--wk:' + wk + '" data-d="' + d.date + '" data-c="' + d.count + '"></i>';
+    });
+    grid.innerHTML = html;
+    $('#heatMonths').innerHTML = months;
+    box.hidden = false;
+    var sc = $('#heatScroll');
+    sc.scrollLeft = sc.scrollWidth; // show the most recent weeks on narrow screens
+
+    // tooltip
+    var tip = $('#heatTip');
+    function show(el) {
+      var c = +el.dataset.c;
+      tip.innerHTML = '<b>' + (c ? c + (c === 1 ? ' contribution' : ' contributions') : 'No contributions') + '</b> · ' + fmtDay(el.dataset.d);
+      tip.hidden = false;
+      var b = box.getBoundingClientRect(), r = el.getBoundingClientRect();
+      tip.style.left = (r.left - b.left + r.width / 2) + 'px';
+      tip.style.top = (r.top - b.top - 8) + 'px';
+    }
+    grid.addEventListener('mouseover', function (e) { if (e.target.dataset && e.target.dataset.d) show(e.target); });
+    grid.addEventListener('mouseleave', function () { tip.hidden = true; });
+    grid.addEventListener('click', function (e) { if (e.target.dataset && e.target.dataset.d) show(e.target); });
+  }
+
+  function loadHeat() {
+    var cached = null;
+    try { cached = JSON.parse(localStorage.getItem(HEAT_CACHE)); } catch (e) {}
+    if (cached && cached.days && Date.now() - cached.t < GH_TTL) { renderHeat(cached.days); return; }
+    if (!window.fetch) { if (cached) renderHeat(cached.days); return; }
+    // public mirror of the contribution calendar (GitHub's own needs a token)
+    fetch('https://github-contributions-api.jogruber.de/v4/' + GH_USER + '?y=last').then(function (r) {
+      if (!r.ok) throw new Error('heat ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      var days = (j.contributions || []).map(function (d) { return { date: d.date, count: d.count, level: d.level }; });
+      if (!days.length) throw new Error('empty');
+      try { localStorage.setItem(HEAT_CACHE, JSON.stringify({ t: Date.now(), days: days })); } catch (e) {}
+      renderHeat(days);
+    }).catch(function () { if (cached) renderHeat(cached.days); });
+  }
+
   if (ghRepos) {
     // only call the API when someone is about to reach the section
     if ('IntersectionObserver' in window) {
       var gio = new IntersectionObserver(function (en) {
-        if (en[0].isIntersecting) { gio.disconnect(); loadGitHub(); }
+        if (en[0].isIntersecting) { gio.disconnect(); loadGitHub(); loadHeat(); }
       }, { rootMargin: '600px 0px' });
       gio.observe($('#github'));
     } else {
       loadGitHub();
+      loadHeat();
     }
   }
 
@@ -783,6 +863,7 @@
   /* ---------- Contact form → mailto ---------- */
   var form = $('#contactForm');
   var note = $('#formNote');
+  if (form) {
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   function setErr(input, msg) {
     var field = input.closest('.field');
@@ -813,6 +894,7 @@
       '&body=' + encodeURIComponent(msg + '\n\n— ' + name + '\n' + email);
     note.textContent = 'Opening your email app… if nothing happens, write to dhanushprabu23@gmail.com.';
   });
+  }
 
   /* ---------- Footer year ---------- */
   var year = $('#year');
